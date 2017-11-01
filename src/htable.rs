@@ -27,29 +27,6 @@ pub struct HTable {
 	bf: BloomFilter,
 }
 
-
-fn mod_bytes(bytes: &[u8], num: usize) -> usize {
-	if num == 0 {
-		return 0;
-	}
-
-	if (num & (num-1)) != 0 {
-		panic!("{} is not a power of 2!", num);
-	}
-
-	let pow = (num as f64).log(2.0) as usize;
-	let mut rem: usize = 0;
-	let base: usize = 2;
-	for i in 0..pow {
-		let offset = i % 8;
-		let bit = 1 << offset;
-		let byte_group = i / 8;
-		let curr = 255 * byte_group + (bytes[bytes.len() - byte_group - 1] & bit) as usize;
-		rem += curr;
-	}
-	rem
-}
-
 impl Bucket {
 	fn new() -> Bucket {
 		Bucket {
