@@ -1,0 +1,11 @@
+[package]
+name = "kv"
+version = "0.1.0"
+authors = ["Frank Paulo Filho <me@frankpf.com>"]
+
+[dependencies]
+bloom-filter = { path = "../bloom-filter" }
+bytes = "0.4.5"
+openssl = "0.9.20"
+byteorder = "1"
+hex = "0.2.0"
