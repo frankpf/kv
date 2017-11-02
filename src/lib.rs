@@ -14,7 +14,7 @@ use std::fs::{File, OpenOptions};
 use std::io::{Read, Write, Seek, SeekFrom};
 
 
-mod htable;
+mod lsm;
 
 const PAGE_SIZE: usize = 4096;
 const TABLE_MAX_PAGES: usize = 100;
