@@ -47,9 +47,7 @@ impl<'a> MemTable<'a> {
 			return Err("Value is too big")
 		}
 
-		if self.deleted.contains(key) {
-			self.deleted.remove(key);
-		}
+		self.deleted.remove(key);
 
 		self.size += key.len();
 		self.size += val.len();
