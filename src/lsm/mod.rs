@@ -2,7 +2,8 @@ use std::collections::{BTreeMap, HashSet};
 use std::collections::btree_map::Iter as BTreeIterator;
 use std::str;
 
-const MAX_MEMTABLE_SIZE: usize = 5 * 1024 * 1024;
+
+const MEMTABLE_THRESHOLD: usize = 1 * 1024 * 1024; // 1MB in bytes
 
 use std::{u8,u32};
 
